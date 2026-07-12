@@ -65,45 +65,7 @@ single abstraction (`src/llm_client.py`) that transparently swaps between:
 | Classification | LLM reasons about scope + conditions to decide CONFLICT/REDUNDANT/COMPLEMENTARY/UNRELATED, with a written explanation (`classifier.py::classify_with_llm`) | rule engine mirroring Option B, with explicit precision guards (see below) (`classifier.py::classify_with_heuristic`) |
 | Similarity / candidate pairing | same in both modes — TF-IDF cosine + topic matching (`similarity.py`). Swap in a real embeddings call here for higher recall if desired. |
 
-To enable LIVE mode, pick one:
 
-**Groq — free, no credit card, no expiration, high rate limits (recommended)**:
-```bash
-# 1. Get a key at https://console.groq.com/keys
-export GROQ_API_KEY=gsk_...
-python scripts/run_pipeline.py
-```
-No extra `pip install` needed — uses only the Python standard library
-(`urllib`). Free tier is ~30 requests/min and 14,400 requests/day, which
-comfortably covers a full pipeline run (~25 calls total). Override the model
-with `GROQ_MODEL` (default `llama-3.3-70b-versatile`).
-
-**Google Gemini — also free, no credit card required to sign up** (note:
-some accounts see the free quota gated at 0 until a billing account is
-linked — Groq is the more reliably zero-friction option as of mid-2026):
-```bash
-export GEMINI_API_KEY=AIza...
-python scripts/run_pipeline.py
-```
-
-**Anthropic or OpenAI** (paid, but new accounts get a small free trial credit):
-```bash
-export ANTHROPIC_API_KEY=sk-ant-...
-pip install anthropic
-python scripts/run_pipeline.py
-```
-
-Provider precedence when multiple keys are set: Groq → Anthropic → OpenAI →
-Gemini → offline. Pass `LLMClient(provider="...")` explicitly to force a
-specific provider regardless of which keys are present.
-
-The dashboard masthead always shows which mode produced the current data,
-and displays a banner when running in offline mode so nobody mistakes
-heuristic output for LLM reasoning.
-
-Both modes emit the **identical JSON schema** (see below), so the graph
-builder, compliance mapper, and dashboard don't know or care which backend
-ran — this is what makes the two modes fully interchangeable.
 
 ## Pipeline stages (`src/pipeline.py`)
 
