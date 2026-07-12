@@ -1,0 +1,1127 @@
+{
+  "generated_at": "2026-07-12T08:19:40Z",
+  "mode": "live:groq",
+  "model": "openai/gpt-oss-20b",
+  "as_of_date": "2025-06-01",
+  "summary": {
+    "policies_analyzed": 17,
+    "obligations_extracted": 60,
+    "candidate_pairs_evaluated": 51,
+    "relationships": {
+      "CONFLICT": 6,
+      "REDUNDANT": 1,
+      "COMPLEMENTARY": 34,
+      "UNRELATED": 10
+    },
+    "relationships_deduped": {
+      "CONFLICT": 5,
+      "REDUNDANT": 1,
+      "COMPLEMENTARY": 27
+    },
+    "policies_stale_or_critical": 13,
+    "runtime_seconds": 570.36
+  },
+  "top_conflicts": [
+    {
+      "pair_id": "POL-001-3.1-o1__POL-002-5.2-o1",
+      "obligation_a_id": "POL-001-3.1-o1",
+      "obligation_b_id": "POL-002-5.2-o1",
+      "policy_a": "POL-001",
+      "policy_b": "POL-002",
+      "section_a": "3.1",
+      "section_b": "5.2",
+      "text_a": "All employees must rotate passwords every 90 days for all corporate accounts, including cloud-hosted systems.",
+      "text_b": "Cloud accounts shall not require periodic password rotation.",
+      "topic": "password_rotation",
+      "relationship": "CONFLICT",
+      "confidence": 0.98,
+      "explanation": "POL\u2011001 \u00a73.1 requires all employees to rotate passwords every 90\u202fdays for all corporate accounts, including cloud\u2011hosted systems, while POL\u2011002 \u00a75.2 prohibits periodic password rotation for cloud accounts. Both obligations target the same entities with opposing requirements, and no exception clause reconciles them.",
+      "similarity": 0.1888,
+      "match_reason": "both",
+      "controls": [
+        "COBIT 2019 APO03 (Maintain Policy Framework)",
+        "ISO 27001 A.5.1 (Policies for Information Security)",
+        "NIST SP 800-53 IA-5 (Authenticator Management)"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "pair_id": "POL-013-3.1-o1__POL-014-3.1-o1",
+      "obligation_a_id": "POL-013-3.1-o1",
+      "obligation_b_id": "POL-014-3.1-o1",
+      "policy_a": "POL-013",
+      "policy_b": "POL-014",
+      "section_a": "3.1",
+      "section_b": "3.1",
+      "text_a": "Multi-factor authentication (MFA) must be enforced for all privileged and administrative accounts on all systems, with no exceptions.",
+      "text_b": "The legacy administrative console for on-prem systems may be accessed using a strong password alone; MFA is not required for these consoles due to compatibility limitations with the legacy authentication module.",
+      "topic": "mfa",
+      "relationship": "CONFLICT",
+      "confidence": 0.98,
+      "explanation": "POL-013 \u00a73.1 mandates MFA for all privileged and administrative accounts on all systems with no exceptions, while POL-014 \u00a73.1 permits access to legacy administrative consoles without MFA. The two obligations directly contradict one another for the same type of accounts.",
+      "similarity": 0.2192,
+      "match_reason": "both",
+      "controls": [
+        "COBIT 2019 APO03 (Maintain Policy Framework)",
+        "ISO 27001 A.5.1 (Policies for Information Security)",
+        "NIST SP 800-53 IA-2 (Identification and Authentication)"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "pair_id": "POL-002-5.3-o2__POL-011-3.1-o1",
+      "obligation_a_id": "POL-002-5.3-o2",
+      "obligation_b_id": "POL-011-3.1-o1",
+      "policy_a": "POL-002",
+      "policy_b": "POL-011",
+      "section_a": "5.3",
+      "section_b": "3.1",
+      "text_a": "Logging must not be disabled outside of an approved, time-boxed exception under the Incident Response Policy.",
+      "text_b": "Audit logging (including CloudTrail or equivalent) must remain enabled at all times on all production systems.",
+      "topic": "logging_monitoring",
+      "relationship": "CONFLICT",
+      "confidence": 0.9,
+      "explanation": "POL-002 \u00a75.3 (A) permits disabling logging only with an approved Incident Response exception, whereas POL-011 \u00a73.1 (B) mandates logging on all production systems at all times with no exception. Because production systems fall under cloud accounts and regions, the two obligations conflict.",
+      "similarity": 0.0569,
+      "match_reason": "same_topic",
+      "controls": [
+        "COBIT 2019 APO03 (Maintain Policy Framework)",
+        "ISO 27001 A.5.1 (Policies for Information Security)",
+        "NIST SP 800-53 AU-2 (Audit Events)",
+        "NIST SP 800-53 SI-4 (System Monitoring)"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "pair_id": "POL-006-4.2-o1__POL-011-3.2-o1",
+      "obligation_a_id": "POL-006-4.2-o1",
+      "obligation_b_id": "POL-011-3.2-o1",
+      "policy_a": "POL-006",
+      "policy_b": "POL-011",
+      "section_a": "4.2",
+      "section_b": "3.2",
+      "text_a": "Personal data must not be retained longer than necessary for the purpose for which it was collected.",
+      "text_b": "Log data must be retained for a minimum of 1 year in an immutable store.",
+      "topic": "data_retention",
+      "relationship": "CONFLICT",
+      "confidence": 0.88,
+      "explanation": "POL-006 \u00a74.2 prohibits retaining personal data longer than necessary; POL-011 \u00a73.2 mandates a minimum 1\u2011year retention for logs, which may contain personal data for EU subjects, creating an irreconcilable conflict.",
+      "similarity": 0.1565,
+      "match_reason": "both",
+      "controls": [
+        "COBIT 2019 APO03 (Maintain Policy Framework)",
+        "GDPR Article 5 (Storage Limitation)",
+        "ISO 27001 A.5.1 (Policies for Information Security)",
+        "SOX \u00a7802"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "pair_id": "POL-006-4.2-o1__POL-016-3.1-o2",
+      "obligation_a_id": "POL-006-4.2-o1",
+      "obligation_b_id": "POL-016-3.1-o2",
+      "policy_a": "POL-006",
+      "policy_b": "POL-016",
+      "section_a": "4.2",
+      "section_b": "3.1",
+      "text_a": "Personal data must not be retained longer than necessary for the purpose for which it was collected.",
+      "text_b": "All production systems must maintain a daily on-premises backup in addition to any other backup mechanism, retained for a minimum of 30 days.",
+      "topic": "data_retention",
+      "relationship": "CONFLICT",
+      "confidence": 0.85,
+      "explanation": "POL-006-4.2-o1 prohibits retaining personal EU data longer than necessary, while POL-016-3.1-o2 requires daily backups of all production systems retained for 30 days. If backups contain EU personal data, they would be retained beyond the 'necessary' period, violating POL-006-4.2-o1; no explicit exception resolves this.",
+      "similarity": 0.0617,
+      "match_reason": "same_topic",
+      "controls": [
+        "COBIT 2019 APO03 (Maintain Policy Framework)",
+        "GDPR Article 5 (Storage Limitation)",
+        "ISO 27001 A.5.1 (Policies for Information Security)",
+        "SOX \u00a7802"
+      ],
+      "severity": "HIGH"
+    }
+  ],
+  "top_redundancies": [
+    {
+      "pair_id": "POL-004-3.2-o1__POL-009-3.1-o1",
+      "obligation_a_id": "POL-004-3.2-o1",
+      "obligation_b_id": "POL-009-3.1-o1",
+      "policy_a": "POL-004",
+      "policy_b": "POL-009",
+      "section_a": "3.2",
+      "section_b": "3.1",
+      "text_a": "Confidential and Restricted data must be encrypted at rest using industry-standard encryption (minimum AES-256) and in transit using TLS 1.2 or higher.",
+      "text_b": "All Confidential and Restricted data must be encrypted at rest using AES-256 or stronger.",
+      "topic": "encryption/encryption_at_rest",
+      "relationship": "REDUNDANT",
+      "confidence": 0.85,
+      "explanation": "Both policies address confidential/restricted data encryption at rest with AES\u2011256 or stronger. POL\u2011004 \u00a73.2 includes the same rest\u2011encryption requirement (plus transit), making POL\u2011009 \u00a73.1\u2019s rest requirement redundant.",
+      "similarity": 0.4148,
+      "match_reason": "text_similarity",
+      "controls": [
+        "COBIT 2019 APO03 (Maintain Policy Framework)",
+        "GDPR Article 32",
+        "NIST SP 800-53 SC-28 (Protection of Information at Rest)"
+      ],
+      "severity": "MEDIUM"
+    }
+  ],
+  "top_complementary": [
+    {
+      "pair_id": "POL-002-5.2-o2__POL-013-3.1-o1",
+      "obligation_a_id": "POL-002-5.2-o2",
+      "obligation_b_id": "POL-013-3.1-o1",
+      "policy_a": "POL-002",
+      "policy_b": "POL-013",
+      "section_a": "5.2",
+      "section_b": "3.1",
+      "text_a": "Multi-factor authentication (MFA) must be enforced on all cloud accounts as the primary defense against credential compromise.",
+      "text_b": "Multi-factor authentication (MFA) must be enforced for all privileged and administrative accounts on all systems, with no exceptions.",
+      "topic": "mfa",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "Both obligations mandate MFA, but POL\u2011002 \u00a75.2 applies to all cloud accounts while POL\u2011013 \u00a73.1 covers privileged and admin accounts on all systems. The broader cloud\u2011wide requirement and the more specific privileged\u2011account requirement reinforce each other without conflict.",
+      "similarity": 0.5641,
+      "match_reason": "both",
+      "controls": [
+        "NIST SP 800-53 IA-2 (Identification and Authentication)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-003-3.4-o1__POL-012-5.2-o1",
+      "obligation_a_id": "POL-003-3.4-o1",
+      "obligation_b_id": "POL-012-5.2-o1",
+      "policy_a": "POL-003",
+      "policy_b": "POL-012",
+      "section_a": "3.4",
+      "section_b": "5.2",
+      "text_a": "Employees must report suspected security incidents to the IT Helpdesk within 24 hours of discovery",
+      "text_b": "All confirmed incidents affecting Confidential or Restricted data must be reported to Legal and the DPO within 24 hours of confirmation.",
+      "topic": "incident_reporting",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-003 \u00a73.4 mandates incident reporting to IT Helpdesk within 24\u202fhrs for all employees, while POL-012 \u00a75.2 adds a parallel reporting requirement to Legal and DPO for confirmed incidents involving Confidential or Restricted data. The second obligation extends the first for a specific data class and confirmation status, creating an exception rather than a contradiction.",
+      "similarity": 0.2003,
+      "match_reason": "both",
+      "controls": [],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-016-3.1-o1__POL-017-4.1-o1",
+      "obligation_a_id": "POL-016-3.1-o1",
+      "obligation_b_id": "POL-017-4.1-o1",
+      "policy_a": "POL-016",
+      "policy_b": "POL-017",
+      "section_a": "3.1",
+      "section_b": "4.1",
+      "text_a": "All production systems must maintain a daily on-premises backup in addition to any other backup mechanism, retained for a minimum of 30 days.",
+      "text_b": "Cloud-hosted systems using managed multi-region replication are exempt from the on-premises backup requirement defined in the Data Backup Policy, provided replication is verified quarterly and covers all Restricted-tier data.",
+      "topic": "backup",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL\u2011016 \u00a73.1 imposes a daily on\u2011premises backup for all production systems, whereas POL\u2011017 \u00a74.1 exempts cloud\u2011hosted systems that use verified multi\u2011region replication covering Restricted data. The latter policy explicitly creates an exception to the former, making the relationship complementary.",
+      "similarity": 0.1894,
+      "match_reason": "both",
+      "controls": [
+        "NIST SP 800-53 CP-9 (System Backup)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-004-3.2-o1__POL-009-3.2-o1",
+      "obligation_a_id": "POL-004-3.2-o1",
+      "obligation_b_id": "POL-009-3.2-o1",
+      "policy_a": "POL-004",
+      "policy_b": "POL-009",
+      "section_a": "3.2",
+      "section_b": "3.2",
+      "text_a": "Confidential and Restricted data must be encrypted at rest using industry-standard encryption (minimum AES-256) and in transit using TLS 1.2 or higher.",
+      "text_b": "All data in transit must use TLS 1.2 or higher.",
+      "topic": "encryption/tls_version",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-004 \u00a73.2 mandates TLS\u202f1.2+ for confidential data in transit, while POL-009 \u00a73.2 requires TLS\u202f1.2+ for all in\u2011transit data. The broader requirement complements the specific one.",
+      "similarity": 0.1831,
+      "match_reason": "text_similarity",
+      "controls": [],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "[POL-004-3.1-o1]__[POL-009-3.1-o1]",
+      "obligation_a_id": "POL-004-3.1-o1",
+      "obligation_b_id": "POL-009-3.1-o1",
+      "policy_a": "POL-004",
+      "policy_b": "POL-009",
+      "section_a": "3.1",
+      "section_b": "3.1",
+      "text_a": "Data must be classified as Public, Internal, Confidential, or Restricted.",
+      "text_b": "All Confidential and Restricted data must be encrypted at rest using AES-256 or stronger.",
+      "topic": "data_classification/encryption_at_rest",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-004 \u00a73.1 mandates classification of all data, while POL-009 \u00a73.1 applies encryption only to Confidential and Restricted data, thus the encryption rule is scoped to a subset and complements the classification requirement.",
+      "similarity": 0.1291,
+      "match_reason": "text_similarity",
+      "controls": [
+        "GDPR Article 32",
+        "NIST SP 800-53 SC-28 (Protection of Information at Rest)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-002-5.3-o2__POL-012-5.1-o1",
+      "obligation_a_id": "POL-002-5.3-o2",
+      "obligation_b_id": "POL-012-5.1-o1",
+      "policy_a": "POL-002",
+      "policy_b": "POL-012",
+      "section_a": "5.3",
+      "section_b": "5.1",
+      "text_a": "Logging must not be disabled outside of an approved, time-boxed exception under the Incident Response Policy.",
+      "text_b": "During an active, declared security incident, the Incident Commander may authorize temporary suspension of specific logging or monitoring controls for a maximum of 4 hours if required for forensic isolation, provided the exception is documented in the incident ticket and reviewed within 24 hours by the CISO.",
+      "topic": "logging_monitoring",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-002-5.3-o2 prohibits disabling logging except under an approved, time\u2011boxed incident\u2011response exception; POL-012-5.1-o1 authorizes a temporary logging suspension during an incident, which satisfies the exception clause. The two obligations are therefore complementary.",
+      "similarity": 0.1182,
+      "match_reason": "same_topic",
+      "controls": [
+        "NIST SP 800-53 AU-2 (Audit Events)",
+        "NIST SP 800-53 SI-4 (System Monitoring)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-002-5.3-o2__POL-008-2.2-o1",
+      "obligation_a_id": "POL-002-5.3-o2",
+      "obligation_b_id": "POL-008-2.2-o1",
+      "policy_a": "POL-002",
+      "policy_b": "POL-008",
+      "section_a": "5.3",
+      "section_b": "2.2",
+      "text_a": "Logging must not be disabled outside of an approved, time-boxed exception under the Incident Response Policy.",
+      "text_b": "All CI/CD pipeline traffic exempted under this policy must be logged and reviewed weekly by the Platform Security team.",
+      "topic": "logging_monitoring",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-002 \u00a75.3 (A) prohibits disabling logging except under an IRP exception, while POL-008 \u00a72.2 (B) requires CI/CD traffic to be logged and reviewed weekly. The logging requirement in (B) is reinforced by (A), making the obligations complementary.",
+      "similarity": 0.0521,
+      "match_reason": "same_topic",
+      "controls": [
+        "NIST SP 800-53 AU-2 (Audit Events)",
+        "NIST SP 800-53 SI-4 (System Monitoring)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-008-2.2-o1__POL-012-5.1-o1",
+      "obligation_a_id": "POL-008-2.2-o1",
+      "obligation_b_id": "POL-012-5.1-o1",
+      "policy_a": "POL-008",
+      "policy_b": "POL-012",
+      "section_a": "2.2",
+      "section_b": "5.1",
+      "text_a": "All CI/CD pipeline traffic exempted under this policy must be logged and reviewed weekly by the Platform Security team.",
+      "text_b": "During an active, declared security incident, the Incident Commander may authorize temporary suspension of specific logging or monitoring controls for a maximum of 4 hours if required for forensic isolation, provided the exception is documented in the incident ticket and reviewed within 24 hours by the CISO.",
+      "topic": "logging_monitoring",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-008 \u00a72.2 (A) mandates weekly logging of CI/CD pipeline traffic, whereas POL-012 \u00a75.1 (B) allows temporary suspension of logging for up to 4 hours during an incident with documentation. The exception in (B) provides a controlled override, making the pair complementary.",
+      "similarity": 0.0401,
+      "match_reason": "same_topic",
+      "controls": [
+        "NIST SP 800-53 AU-2 (Audit Events)",
+        "NIST SP 800-53 SI-4 (System Monitoring)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-011-3.1-o2__POL-012-5.1-o1",
+      "obligation_a_id": "POL-011-3.1-o2",
+      "obligation_b_id": "POL-012-5.1-o1",
+      "policy_a": "POL-011",
+      "policy_b": "POL-012",
+      "section_a": "3.1",
+      "section_b": "5.1",
+      "text_a": "Logging must not be manually disabled by an engineer for debugging or any other ad hoc purpose.",
+      "text_b": "During an active, declared security incident, the Incident Commander may authorize temporary suspension of specific logging or monitoring controls for a maximum of 4 hours if required for forensic isolation, provided the exception is documented in the incident ticket and reviewed within 24 hours by the CISO.",
+      "topic": "logging_monitoring",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-011 \u00a73.1 (A) forbids engineers from manually disabling logging for debugging, whereas POL-012 \u00a75.1 (B) allows the Incident Commander to suspend logging for up to 4 hours with proper documentation. The exception is scoped to the Incident Commander, so the two obligations are complementary.",
+      "similarity": 0.0347,
+      "match_reason": "same_topic",
+      "controls": [
+        "NIST SP 800-53 AU-2 (Audit Events)",
+        "NIST SP 800-53 SI-4 (System Monitoring)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-016-3.1-o2__POL-017-4.1-o1",
+      "obligation_a_id": "POL-016-3.1-o2",
+      "obligation_b_id": "POL-017-4.1-o1",
+      "policy_a": "POL-016",
+      "policy_b": "POL-017",
+      "section_a": "3.1",
+      "section_b": "4.1",
+      "text_a": "All production systems must maintain a daily on-premises backup in addition to any other backup mechanism, retained for a minimum of 30 days.",
+      "text_b": "Cloud-hosted systems using managed multi-region replication are exempt from the on-premises backup requirement defined in the Data Backup Policy, provided replication is verified quarterly and covers all Restricted-tier data.",
+      "topic": "data_retention/backup",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.94,
+      "explanation": "POL-016 \u00a73.1 requires daily on\u2011prem backups for all production systems, but POL-017 \u00a74.1 exempts cloud\u2011hosted systems when quarterly replicated multi\u2011region data covers Restricted tier. The exception complements the blanket requirement.",
+      "similarity": 0.1502,
+      "match_reason": "text_similarity",
+      "controls": [
+        "GDPR Article 5 (Storage Limitation)",
+        "NIST SP 800-53 CP-9 (System Backup)",
+        "SOX \u00a7802"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "[POL-009-3.1-o1]__[POL-012-5.2-o1]",
+      "obligation_a_id": "POL-009-3.1-o1",
+      "obligation_b_id": "POL-012-5.2-o1",
+      "policy_a": "POL-009",
+      "policy_b": "POL-012",
+      "section_a": "3.1",
+      "section_b": "5.2",
+      "text_a": "All Confidential and Restricted data must be encrypted at rest using AES-256 or stronger.",
+      "text_b": "All confirmed incidents affecting Confidential or Restricted data must be reported to Legal and the DPO within 24 hours of confirmation.",
+      "topic": "encryption_at_rest/incident_reporting",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.94,
+      "explanation": "POL-009 \u00a73.1 encrypts Confidential/Restricted data at rest, while POL-012 \u00a75.2 requires incident reporting for incidents involving such data; the policies address different aspects of the same data categories and therefore complement each other.",
+      "similarity": 0.1226,
+      "match_reason": "text_similarity",
+      "controls": [
+        "GDPR Article 32",
+        "NIST SP 800-53 SC-28 (Protection of Information at Rest)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-002-5.1-o1__POL-010-4.1-o1",
+      "obligation_a_id": "POL-002-5.1-o1",
+      "obligation_b_id": "POL-010-4.1-o1",
+      "policy_a": "POL-002",
+      "policy_b": "POL-010",
+      "section_a": "5.1",
+      "section_b": "4.1",
+      "text_a": "All cloud-hosted data stores must use AES-256 encryption at rest.",
+      "text_b": "All cloud object and block storage containing Confidential or Restricted data must be encrypted at rest using AES-256 encryption.",
+      "topic": "encryption_at_rest",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.93,
+      "explanation": "POL\u2011002 \u00a75.1 requires AES\u2011256 encryption at rest for all cloud\u2011hosted data stores; POL\u2011010 \u00a74.1 applies only to cloud object/block storage containing confidential or restricted data, also requiring AES\u2011256 at rest. The more specific rule supplements the broader one without conflict.",
+      "similarity": 0.418,
+      "match_reason": "both",
+      "controls": [
+        "GDPR Article 32",
+        "NIST SP 800-53 SC-28 (Protection of Information at Rest)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-005-3.2-o1__POL-011-3.2-o1",
+      "obligation_a_id": "POL-005-3.2-o1",
+      "obligation_b_id": "POL-011-3.2-o1",
+      "policy_a": "POL-005",
+      "policy_b": "POL-011",
+      "section_a": "3.2",
+      "section_b": "3.2",
+      "text_a": "Security and access audit logs must be retained for a minimum of 3 years.",
+      "text_b": "Log data must be retained for a minimum of 1 year in an immutable store.",
+      "topic": "data_retention",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.93,
+      "explanation": "POL-005 \u00a73.2 requires audit logs to be retained for 3\u202fyears, and POL-011 \u00a73.2 requires all logs to be retained for at least 1\u202fyear. The stricter 3\u2011year rule applies to audit logs, complementing the general requirement.",
+      "similarity": 0.1584,
+      "match_reason": "both",
+      "controls": [
+        "GDPR Article 5 (Storage Limitation)",
+        "SOX \u00a7802"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-008-2.2-o1__POL-011-3.1-o2",
+      "obligation_a_id": "POL-008-2.2-o1",
+      "obligation_b_id": "POL-011-3.1-o2",
+      "policy_a": "POL-008",
+      "policy_b": "POL-011",
+      "section_a": "2.2",
+      "section_b": "3.1",
+      "text_a": "All CI/CD pipeline traffic exempted under this policy must be logged and reviewed weekly by the Platform Security team.",
+      "text_b": "Logging must not be manually disabled by an engineer for debugging or any other ad hoc purpose.",
+      "topic": "logging_monitoring",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.93,
+      "explanation": "POL\u2011008 \u00a72.2 requires CI/CD traffic to be logged and reviewed weekly; POL\u2011011 \u00a73.1 prohibits engineers from disabling logging. The prohibition reinforces the logging requirement, so the obligations are complementary.",
+      "similarity": 0.025,
+      "match_reason": "same_topic",
+      "controls": [
+        "NIST SP 800-53 AU-2 (Audit Events)",
+        "NIST SP 800-53 SI-4 (System Monitoring)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-002-5.3-o1__POL-011-3.1-o1",
+      "obligation_a_id": "POL-002-5.3-o1",
+      "obligation_b_id": "POL-011-3.1-o1",
+      "policy_a": "POL-002",
+      "policy_b": "POL-011",
+      "section_a": "5.3",
+      "section_b": "3.1",
+      "text_a": "CloudTrail (or equivalent audit logging) must be enabled at all times on every account and region.",
+      "text_b": "Audit logging (including CloudTrail or equivalent) must remain enabled at all times on all production systems.",
+      "topic": "logging_monitoring",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.92,
+      "explanation": "POL\u2011002 \u00a75.3 mandates that CloudTrail (or equivalent) is always enabled on every cloud account and region, while POL\u2011011 \u00a73.1 requires audit logging to remain enabled on all production systems. The scopes overlap but are not contradictory; each requirement reinforces the other.",
+      "similarity": 0.5189,
+      "match_reason": "both",
+      "controls": [
+        "NIST SP 800-53 AU-2 (Audit Events)",
+        "NIST SP 800-53 SI-4 (System Monitoring)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-002-5.1-o1__POL-016-3.3-o4",
+      "obligation_a_id": "POL-002-5.1-o1",
+      "obligation_b_id": "POL-016-3.3-o4",
+      "policy_a": "POL-002",
+      "policy_b": "POL-016",
+      "section_a": "5.1",
+      "section_b": "3.3",
+      "text_a": "All cloud-hosted data stores must use AES-256 encryption at rest.",
+      "text_b": "Backup media must be encrypted at rest.",
+      "topic": "encryption_at_rest",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.92,
+      "explanation": "POL\u2011002 \u00a75.1 requires AES\u2011256 at rest for cloud data stores, while POL\u2011016 \u00a73.3 mandates encryption of backup media. They cover distinct objects (data stores vs backup media) and reinforce overall data\u2011at\u2011rest security.",
+      "similarity": 0.1475,
+      "match_reason": "both",
+      "controls": [
+        "GDPR Article 32",
+        "NIST SP 800-53 SC-28 (Protection of Information at Rest)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-003-3.2-o1__POL-009-3.2-o1",
+      "obligation_a_id": "POL-003-3.2-o1",
+      "obligation_b_id": "POL-009-3.2-o1",
+      "policy_a": "POL-003",
+      "policy_b": "POL-009",
+      "section_a": "3.2",
+      "section_b": "3.2",
+      "text_a": "All web traffic should be encrypted using TLS 1.0 or higher when accessing corporate resources remotely",
+      "text_b": "All data in transit must use TLS 1.2 or higher.",
+      "topic": "encryption_in_transit/tls_version",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.92,
+      "explanation": "POL\u2011003 \u00a73.2 recommends TLS\u00a01.0+ for web traffic to corporate resources remotely, while POL\u2011009 \u00a73.2 mandates TLS\u00a01.2+ for all data in transit. The recommendation is subsumed by the stronger mandatory requirement, so they coexist without conflict.",
+      "similarity": 0.1342,
+      "match_reason": "text_similarity",
+      "controls": [
+        "GDPR Article 32",
+        "NIST SP 800-53 SC-8 (Transmission Confidentiality and Integrity)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-009-3.1-o1__POL-010-4.1-o1",
+      "obligation_a_id": "POL-009-3.1-o1",
+      "obligation_b_id": "POL-010-4.1-o1",
+      "policy_a": "POL-009",
+      "policy_b": "POL-010",
+      "section_a": "3.1",
+      "section_b": "4.1",
+      "text_a": "All Confidential and Restricted data must be encrypted at rest using AES-256 or stronger.",
+      "text_b": "All cloud object and block storage containing Confidential or Restricted data must be encrypted at rest using AES-256 encryption.",
+      "topic": "encryption_at_rest",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "POL\u2011009 \u00a73.1 requires AES\u2011256 encryption at rest for all confidential/restricted data, whereas POL\u2011010 \u00a74.1 requires the same encryption for cloud object or block storage that holds such data. The latter is a narrower, environment\u2011specific subset that supports the broader policy.",
+      "similarity": 0.5242,
+      "match_reason": "both",
+      "controls": [
+        "GDPR Article 32",
+        "NIST SP 800-53 SC-28 (Protection of Information at Rest)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-004-3.2-o1__POL-010-4.1-o1",
+      "obligation_a_id": "POL-004-3.2-o1",
+      "obligation_b_id": "POL-010-4.1-o1",
+      "policy_a": "POL-004",
+      "policy_b": "POL-010",
+      "section_a": "3.2",
+      "section_b": "4.1",
+      "text_a": "Confidential and Restricted data must be encrypted at rest using industry-standard encryption (minimum AES-256) and in transit using TLS 1.2 or higher.",
+      "text_b": "All cloud object and block storage containing Confidential or Restricted data must be encrypted at rest using AES-256 encryption.",
+      "topic": "encryption/encryption_at_rest",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "POL\u2011004 \u00a73.2 requires AES\u2011256 at rest for all confidential/restricted data, whereas POL\u2011010 \u00a74.1 restricts the requirement to cloud object/block storage. The cloud\u2011specific rule complements the broader data\u2011classification rule without contradiction.",
+      "similarity": 0.3864,
+      "match_reason": "text_similarity",
+      "controls": [
+        "GDPR Article 32",
+        "NIST SP 800-53 SC-28 (Protection of Information at Rest)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-009-3.1-o1__POL-016-3.3-o4",
+      "obligation_a_id": "POL-009-3.1-o1",
+      "obligation_b_id": "POL-016-3.3-o4",
+      "policy_a": "POL-009",
+      "policy_b": "POL-016",
+      "section_a": "3.1",
+      "section_b": "3.3",
+      "text_a": "All Confidential and Restricted data must be encrypted at rest using AES-256 or stronger.",
+      "text_b": "Backup media must be encrypted at rest.",
+      "topic": "encryption_at_rest",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "POL-009 \u00a73.1 requires AES\u2011256 encryption for Confidential and Restricted data at rest, while POL-016 \u00a73.3 requires encryption of all backup media at rest. The two obligations apply to different scopes (data vs. backup media) and reinforce overall encryption controls.",
+      "similarity": 0.2556,
+      "match_reason": "both",
+      "controls": [
+        "GDPR Article 32",
+        "NIST SP 800-53 SC-28 (Protection of Information at Rest)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-010-4.1-o1__POL-016-3.3-o4",
+      "obligation_a_id": "POL-010-4.1-o1",
+      "obligation_b_id": "POL-016-3.3-o4",
+      "policy_a": "POL-010",
+      "policy_b": "POL-016",
+      "section_a": "4.1",
+      "section_b": "3.3",
+      "text_a": "All cloud object and block storage containing Confidential or Restricted data must be encrypted at rest using AES-256 encryption.",
+      "text_b": "Backup media must be encrypted at rest.",
+      "topic": "encryption_at_rest",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "POL-010 \u00a74.1 requires AES\u2011256 encryption at rest for cloud storage containing Confidential or Restricted data, and POL-016 \u00a73.3 requires encryption of all backup media at rest. The requirements apply to related but distinct scopes and reinforce encryption controls.",
+      "similarity": 0.2067,
+      "match_reason": "both",
+      "controls": [
+        "GDPR Article 32",
+        "NIST SP 800-53 SC-28 (Protection of Information at Rest)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-002-5.4-o1__POL-007-3.3-o1",
+      "obligation_a_id": "POL-002-5.4-o1",
+      "obligation_b_id": "POL-007-3.3-o1",
+      "policy_a": "POL-002",
+      "policy_b": "POL-007",
+      "section_a": "5.4",
+      "section_b": "3.3",
+      "text_a": "Security groups and equivalent network controls must default to deny-all inbound, with exceptions requiring documented business justification and expiration date.",
+      "text_b": "All inbound firewall rules must be reviewed quarterly and documented with business justification.",
+      "topic": "firewall_network/firewall_rules",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "POL-002 \u00a75.4 requires security groups to default deny inbound and allows exceptions only with documented justification and expiration. POL-007 \u00a73.3 requires quarterly review and business justification for all inbound firewall rules. The policies reinforce one another by providing documentation requirements, but they do not conflict.",
+      "similarity": 0.2002,
+      "match_reason": "text_similarity",
+      "controls": [
+        "CIS Control 12 (Network Infrastructure)",
+        "NIST SP 800-53 SC-7 (Boundary Protection)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-003-3.2-o1__POL-004-3.2-o1",
+      "obligation_a_id": "POL-003-3.2-o1",
+      "obligation_b_id": "POL-004-3.2-o1",
+      "policy_a": "POL-003",
+      "policy_b": "POL-004",
+      "section_a": "3.2",
+      "section_b": "3.2",
+      "text_a": "All web traffic should be encrypted using TLS 1.0 or higher when accessing corporate resources remotely",
+      "text_b": "Confidential and Restricted data must be encrypted at rest using industry-standard encryption (minimum AES-256) and in transit using TLS 1.2 or higher.",
+      "topic": "encryption_in_transit/encryption",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "POL-003 \u00a73.2 recommends TLS\u202f1.0+ for all remote web traffic, whereas POL-004 \u00a73.2 requires TLS\u202f1.2+ for confidential data in transit. The stricter mandatory requirement supersedes the recommendation without contradiction.",
+      "similarity": 0.18,
+      "match_reason": "text_similarity",
+      "controls": [
+        "GDPR Article 32",
+        "NIST SP 800-53 SC-8 (Transmission Confidentiality and Integrity)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-011-3.2-o1__POL-016-3.1-o2",
+      "obligation_a_id": "POL-011-3.2-o1",
+      "obligation_b_id": "POL-016-3.1-o2",
+      "policy_a": "POL-011",
+      "policy_b": "POL-016",
+      "section_a": "3.2",
+      "section_b": "3.1",
+      "text_a": "Log data must be retained for a minimum of 1 year in an immutable store.",
+      "text_b": "All production systems must maintain a daily on-premises backup in addition to any other backup mechanism, retained for a minimum of 30 days.",
+      "topic": "data_retention",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "Both obligations are mandatory and concern data retention but apply to distinct data sets: POL-011-3.2-o1 mandates log data retention for 1 year, while POL-016-3.1-o2 requires daily backups of all production systems for 30 days. There is no contradiction; they coexist by design.",
+      "similarity": 0.1201,
+      "match_reason": "both",
+      "controls": [
+        "GDPR Article 5 (Storage Limitation)",
+        "SOX \u00a7802"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-009-3.1-o1__POL-015-3.3-o1",
+      "obligation_a_id": "POL-009-3.1-o1",
+      "obligation_b_id": "POL-015-3.3-o1",
+      "policy_a": "POL-009",
+      "policy_b": "POL-015",
+      "section_a": "3.1",
+      "section_b": "3.3",
+      "text_a": "All Confidential and Restricted data must be encrypted at rest using AES-256 or stronger.",
+      "text_b": "Vendor security posture must be reassessed annually for vendors with access to Confidential or Restricted data.",
+      "topic": "encryption_at_rest/vendor_risk",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.88,
+      "explanation": "POL\u2011009 \u00a73.1 mandates AES\u2011256 encryption at rest for Confidential/Restricted data, and POL\u2011015 \u00a73.3 requires annual vendor reassessment for vendors handling such data. Both obligations protect the same data set but in complementary ways.",
+      "similarity": 0.1353,
+      "match_reason": "text_similarity",
+      "controls": [
+        "GDPR Article 32",
+        "NIST SP 800-53 SC-28 (Protection of Information at Rest)",
+        "NIST SP 800-53 SR-6 (Supplier Assessments)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-002-5.1-o1__POL-009-3.1-o1",
+      "obligation_a_id": "POL-002-5.1-o1",
+      "obligation_b_id": "POL-009-3.1-o1",
+      "policy_a": "POL-002",
+      "policy_b": "POL-009",
+      "section_a": "5.1",
+      "section_b": "3.1",
+      "text_a": "All cloud-hosted data stores must use AES-256 encryption at rest.",
+      "text_b": "All Confidential and Restricted data must be encrypted at rest using AES-256 or stronger.",
+      "topic": "encryption_at_rest",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.85,
+      "explanation": "POL-002 \u00a75.1 requires AES\u2011256 encryption at rest for all cloud\u2011hosted data stores, whereas POL-009 \u00a73.1 requires AES\u2011256 encryption at rest for all Confidential and Restricted data regardless of location. The policies cover different scopes but reinforce encryption requirements.",
+      "similarity": 0.2257,
+      "match_reason": "both",
+      "controls": [
+        "GDPR Article 32",
+        "NIST SP 800-53 SC-28 (Protection of Information at Rest)"
+      ],
+      "severity": "INFO"
+    },
+    {
+      "pair_id": "POL-002-5.1-o1__POL-004-3.2-o1",
+      "obligation_a_id": "POL-002-5.1-o1",
+      "obligation_b_id": "POL-004-3.2-o1",
+      "policy_a": "POL-002",
+      "policy_b": "POL-004",
+      "section_a": "5.1",
+      "section_b": "3.2",
+      "text_a": "All cloud-hosted data stores must use AES-256 encryption at rest.",
+      "text_b": "Confidential and Restricted data must be encrypted at rest using industry-standard encryption (minimum AES-256) and in transit using TLS 1.2 or higher.",
+      "topic": "encryption_at_rest/encryption",
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.85,
+      "explanation": "POL-002 \u00a75.1 mandates AES\u2011256 encryption at rest for all cloud\u2011hosted data stores, whereas POL-004 \u00a73.2 requires encryption at rest (minimum AES\u2011256) for Confidential or Restricted data in any location, adding a TLS 1.2+ requirement for transit. The two obligations apply to overlapping data sets but one is broader; they support each other rather than conflict.",
+      "similarity": 0.1909,
+      "match_reason": "text_similarity",
+      "controls": [
+        "GDPR Article 32",
+        "NIST SP 800-53 SC-28 (Protection of Information at Rest)"
+      ],
+      "severity": "INFO"
+    }
+  ],
+  "stalest_policies": [
+    {
+      "policy_id": "POL-007",
+      "policy_title": "Network Security Policy",
+      "last_reviewed": "2021-09-01",
+      "months_since_review": 45.0,
+      "review_status": "critical",
+      "deprecated_references": [
+        {
+          "reference": "TLS 1.0",
+          "reason": "Deprecated by IETF RFC 8996 (2021); superseded by TLS 1.2+"
+        },
+        {
+          "reference": "SHA-1",
+          "reason": "Cryptographically broken since 2017 (SHAttered); superseded by SHA-256"
+        }
+      ],
+      "staleness_score": 100,
+      "summary": "Last reviewed 45 months ago (critical). References deprecated standard(s): TLS 1.0, SHA-1.",
+      "controls": [
+        "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+        "NIST SP 800-53 PL-1 (Policy and Procedures)"
+      ]
+    },
+    {
+      "policy_id": "POL-014",
+      "policy_title": "Legacy Systems Support Policy",
+      "last_reviewed": "2019-05-08",
+      "months_since_review": 72.8,
+      "review_status": "critical",
+      "deprecated_references": [
+        {
+          "reference": "SHA-1",
+          "reason": "Cryptographically broken since 2017 (SHAttered); superseded by SHA-256"
+        },
+        {
+          "reference": "Windows Server 2012",
+          "reason": "End of extended support (Oct 2023)"
+        }
+      ],
+      "staleness_score": 100,
+      "summary": "Last reviewed 73 months ago (critical). References deprecated standard(s): SHA-1, Windows Server 2012.",
+      "controls": [
+        "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+        "NIST SP 800-53 PL-1 (Policy and Procedures)"
+      ]
+    },
+    {
+      "policy_id": "POL-009",
+      "policy_title": "Encryption Standards Policy",
+      "last_reviewed": "2022-11-05",
+      "months_since_review": 30.9,
+      "review_status": "critical",
+      "deprecated_references": [
+        {
+          "reference": "TLS 1.0",
+          "reason": "Deprecated by IETF RFC 8996 (2021); superseded by TLS 1.2+"
+        },
+        {
+          "reference": "TLS 1.1",
+          "reason": "Deprecated by IETF RFC 8996 (2021); superseded by TLS 1.2+"
+        }
+      ],
+      "staleness_score": 92,
+      "summary": "Last reviewed 31 months ago (critical). References deprecated standard(s): TLS 1.0, TLS 1.1.",
+      "controls": [
+        "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+        "NIST SP 800-53 PL-1 (Policy and Procedures)"
+      ]
+    },
+    {
+      "policy_id": "POL-003",
+      "policy_title": "Acceptable Use Policy",
+      "last_reviewed": "2020-06-01",
+      "months_since_review": 60.0,
+      "review_status": "critical",
+      "deprecated_references": [
+        {
+          "reference": "TLS 1.0",
+          "reason": "Deprecated by IETF RFC 8996 (2021); superseded by TLS 1.2+"
+        }
+      ],
+      "staleness_score": 80,
+      "summary": "Last reviewed 60 months ago (critical). References deprecated standard(s): TLS 1.0.",
+      "controls": [
+        "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+        "NIST SP 800-53 PL-1 (Policy and Procedures)"
+      ]
+    },
+    {
+      "policy_id": "POL-015",
+      "policy_title": "Vendor & Third-Party Risk Policy",
+      "last_reviewed": "2020-11-11",
+      "months_since_review": 54.7,
+      "review_status": "critical",
+      "deprecated_references": [
+        {
+          "reference": "NIST SP 800-53 Rev 4",
+          "reason": "Superseded by NIST SP 800-53 Rev 5 (published Sept 2020)"
+        }
+      ],
+      "staleness_score": 80,
+      "summary": "Last reviewed 55 months ago (critical). References deprecated standard(s): NIST SP 800-53 Rev 4.",
+      "controls": [
+        "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+        "NIST SP 800-53 PL-1 (Policy and Procedures)"
+      ]
+    },
+    {
+      "policy_id": "POL-001",
+      "policy_title": "Password Policy",
+      "last_reviewed": "2021-03-15",
+      "months_since_review": 50.5,
+      "review_status": "critical",
+      "deprecated_references": [],
+      "staleness_score": 60,
+      "summary": "Last reviewed 50 months ago (critical).",
+      "controls": [
+        "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+        "NIST SP 800-53 PL-1 (Policy and Procedures)"
+      ]
+    },
+    {
+      "policy_id": "POL-004",
+      "policy_title": "Data Classification Policy",
+      "last_reviewed": "2022-02-20",
+      "months_since_review": 39.4,
+      "review_status": "stale",
+      "deprecated_references": [],
+      "staleness_score": 60,
+      "summary": "Last reviewed 39 months ago (stale).",
+      "controls": [
+        "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+        "NIST SP 800-53 PL-1 (Policy and Procedures)"
+      ]
+    },
+    {
+      "policy_id": "POL-011",
+      "policy_title": "Logging & Monitoring Policy",
+      "last_reviewed": "2021-04-22",
+      "months_since_review": 49.3,
+      "review_status": "critical",
+      "deprecated_references": [],
+      "staleness_score": 60,
+      "summary": "Last reviewed 49 months ago (critical).",
+      "controls": [
+        "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+        "NIST SP 800-53 PL-1 (Policy and Procedures)"
+      ]
+    },
+    {
+      "policy_id": "POL-016",
+      "policy_title": "Data Backup Policy",
+      "last_reviewed": "2021-09-01",
+      "months_since_review": 45.0,
+      "review_status": "stale",
+      "deprecated_references": [],
+      "staleness_score": 60,
+      "summary": "Last reviewed 45 months ago (stale).",
+      "controls": [
+        "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+        "NIST SP 800-53 PL-1 (Policy and Procedures)"
+      ]
+    },
+    {
+      "policy_id": "POL-013",
+      "policy_title": "Identity & Access Management Policy",
+      "last_reviewed": "2022-07-19",
+      "months_since_review": 34.4,
+      "review_status": "stale",
+      "deprecated_references": [],
+      "staleness_score": 57,
+      "summary": "Last reviewed 34 months ago (stale).",
+      "controls": [
+        "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+        "NIST SP 800-53 PL-1 (Policy and Procedures)"
+      ]
+    }
+  ],
+  "policy_scores": [
+    {
+      "policy_id": "POL-002",
+      "title": "Cloud Security Policy",
+      "team": "Cloud Engineering",
+      "conflict_count": 3,
+      "redundant_count": 0,
+      "complementary_count": 13,
+      "staleness_score": 28,
+      "review_status": "aging",
+      "health_score": 29
+    },
+    {
+      "policy_id": "POL-001",
+      "title": "Password Policy",
+      "team": "IT Security",
+      "conflict_count": 2,
+      "redundant_count": 0,
+      "complementary_count": 0,
+      "staleness_score": 60,
+      "review_status": "critical",
+      "health_score": 36
+    },
+    {
+      "policy_id": "POL-011",
+      "title": "Logging & Monitoring Policy",
+      "team": "Security Operations",
+      "conflict_count": 2,
+      "redundant_count": 0,
+      "complementary_count": 9,
+      "staleness_score": 60,
+      "review_status": "critical",
+      "health_score": 36
+    },
+    {
+      "policy_id": "POL-014",
+      "title": "Legacy Systems Support Policy",
+      "team": "Infrastructure",
+      "conflict_count": 1,
+      "redundant_count": 0,
+      "complementary_count": 0,
+      "staleness_score": 100,
+      "review_status": "critical",
+      "health_score": 40
+    },
+    {
+      "policy_id": "POL-006",
+      "title": "Data Subject Rights & Privacy Policy",
+      "team": "Legal",
+      "conflict_count": 2,
+      "redundant_count": 0,
+      "complementary_count": 0,
+      "staleness_score": 37,
+      "review_status": "stale",
+      "health_score": 45
+    },
+    {
+      "policy_id": "POL-009",
+      "title": "Encryption Standards Policy",
+      "team": "Security Architecture",
+      "conflict_count": 0,
+      "redundant_count": 1,
+      "complementary_count": 8,
+      "staleness_score": 92,
+      "review_status": "critical",
+      "health_score": 55
+    },
+    {
+      "policy_id": "POL-016",
+      "title": "Data Backup Policy",
+      "team": "Infrastructure",
+      "conflict_count": 1,
+      "redundant_count": 0,
+      "complementary_count": 7,
+      "staleness_score": 60,
+      "review_status": "stale",
+      "health_score": 56
+    },
+    {
+      "policy_id": "POL-013",
+      "title": "Identity & Access Management Policy",
+      "team": "Identity & Access Management",
+      "conflict_count": 1,
+      "redundant_count": 0,
+      "complementary_count": 1,
+      "staleness_score": 57,
+      "review_status": "stale",
+      "health_score": 57
+    },
+    {
+      "policy_id": "POL-007",
+      "title": "Network Security Policy",
+      "team": "Infrastructure",
+      "conflict_count": 0,
+      "redundant_count": 0,
+      "complementary_count": 1,
+      "staleness_score": 100,
+      "review_status": "critical",
+      "health_score": 60
+    },
+    {
+      "policy_id": "POL-003",
+      "title": "Acceptable Use Policy",
+      "team": "Human Resources",
+      "conflict_count": 0,
+      "redundant_count": 0,
+      "complementary_count": 3,
+      "staleness_score": 80,
+      "review_status": "critical",
+      "health_score": 68
+    },
+    {
+      "policy_id": "POL-004",
+      "title": "Data Classification Policy",
+      "team": "Compliance",
+      "conflict_count": 0,
+      "redundant_count": 1,
+      "complementary_count": 5,
+      "staleness_score": 60,
+      "review_status": "stale",
+      "health_score": 68
+    },
+    {
+      "policy_id": "POL-015",
+      "title": "Vendor & Third-Party Risk Policy",
+      "team": "Procurement",
+      "conflict_count": 0,
+      "redundant_count": 0,
+      "complementary_count": 1,
+      "staleness_score": 80,
+      "review_status": "critical",
+      "health_score": 68
+    },
+    {
+      "policy_id": "POL-012",
+      "title": "Incident Response Policy",
+      "team": "Security Operations",
+      "conflict_count": 0,
+      "redundant_count": 0,
+      "complementary_count": 7,
+      "staleness_score": 48,
+      "review_status": "stale",
+      "health_score": 81
+    },
+    {
+      "policy_id": "POL-005",
+      "title": "Data Retention Policy",
+      "team": "Legal",
+      "conflict_count": 0,
+      "redundant_count": 0,
+      "complementary_count": 1,
+      "staleness_score": 41,
+      "review_status": "stale",
+      "health_score": 84
+    },
+    {
+      "policy_id": "POL-010",
+      "title": "Cloud Storage Security Policy",
+      "team": "Cloud Engineering",
+      "conflict_count": 0,
+      "redundant_count": 0,
+      "complementary_count": 4,
+      "staleness_score": 28,
+      "review_status": "aging",
+      "health_score": 89
+    },
+    {
+      "policy_id": "POL-017",
+      "title": "Cloud Resilience & Backup Policy",
+      "team": "Cloud Engineering",
+      "conflict_count": 0,
+      "redundant_count": 0,
+      "complementary_count": 3,
+      "staleness_score": 28,
+      "review_status": "aging",
+      "health_score": 89
+    },
+    {
+      "policy_id": "POL-008",
+      "title": "Remote Access & CI/CD Exception Policy",
+      "team": "DevOps",
+      "conflict_count": 0,
+      "redundant_count": 0,
+      "complementary_count": 5,
+      "staleness_score": 24,
+      "review_status": "aging",
+      "health_score": 90
+    }
+  ]
+}

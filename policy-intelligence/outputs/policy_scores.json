@@ -1,0 +1,189 @@
+[
+  {
+    "policy_id": "POL-002",
+    "title": "Cloud Security Policy",
+    "team": "Cloud Engineering",
+    "conflict_count": 3,
+    "redundant_count": 0,
+    "complementary_count": 13,
+    "staleness_score": 28,
+    "review_status": "aging",
+    "health_score": 29
+  },
+  {
+    "policy_id": "POL-001",
+    "title": "Password Policy",
+    "team": "IT Security",
+    "conflict_count": 2,
+    "redundant_count": 0,
+    "complementary_count": 0,
+    "staleness_score": 60,
+    "review_status": "critical",
+    "health_score": 36
+  },
+  {
+    "policy_id": "POL-011",
+    "title": "Logging & Monitoring Policy",
+    "team": "Security Operations",
+    "conflict_count": 2,
+    "redundant_count": 0,
+    "complementary_count": 9,
+    "staleness_score": 60,
+    "review_status": "critical",
+    "health_score": 36
+  },
+  {
+    "policy_id": "POL-014",
+    "title": "Legacy Systems Support Policy",
+    "team": "Infrastructure",
+    "conflict_count": 1,
+    "redundant_count": 0,
+    "complementary_count": 0,
+    "staleness_score": 100,
+    "review_status": "critical",
+    "health_score": 40
+  },
+  {
+    "policy_id": "POL-006",
+    "title": "Data Subject Rights & Privacy Policy",
+    "team": "Legal",
+    "conflict_count": 2,
+    "redundant_count": 0,
+    "complementary_count": 0,
+    "staleness_score": 37,
+    "review_status": "stale",
+    "health_score": 45
+  },
+  {
+    "policy_id": "POL-009",
+    "title": "Encryption Standards Policy",
+    "team": "Security Architecture",
+    "conflict_count": 0,
+    "redundant_count": 1,
+    "complementary_count": 8,
+    "staleness_score": 92,
+    "review_status": "critical",
+    "health_score": 55
+  },
+  {
+    "policy_id": "POL-016",
+    "title": "Data Backup Policy",
+    "team": "Infrastructure",
+    "conflict_count": 1,
+    "redundant_count": 0,
+    "complementary_count": 7,
+    "staleness_score": 60,
+    "review_status": "stale",
+    "health_score": 56
+  },
+  {
+    "policy_id": "POL-013",
+    "title": "Identity & Access Management Policy",
+    "team": "Identity & Access Management",
+    "conflict_count": 1,
+    "redundant_count": 0,
+    "complementary_count": 1,
+    "staleness_score": 57,
+    "review_status": "stale",
+    "health_score": 57
+  },
+  {
+    "policy_id": "POL-007",
+    "title": "Network Security Policy",
+    "team": "Infrastructure",
+    "conflict_count": 0,
+    "redundant_count": 0,
+    "complementary_count": 1,
+    "staleness_score": 100,
+    "review_status": "critical",
+    "health_score": 60
+  },
+  {
+    "policy_id": "POL-003",
+    "title": "Acceptable Use Policy",
+    "team": "Human Resources",
+    "conflict_count": 0,
+    "redundant_count": 0,
+    "complementary_count": 3,
+    "staleness_score": 80,
+    "review_status": "critical",
+    "health_score": 68
+  },
+  {
+    "policy_id": "POL-004",
+    "title": "Data Classification Policy",
+    "team": "Compliance",
+    "conflict_count": 0,
+    "redundant_count": 1,
+    "complementary_count": 5,
+    "staleness_score": 60,
+    "review_status": "stale",
+    "health_score": 68
+  },
+  {
+    "policy_id": "POL-015",
+    "title": "Vendor & Third-Party Risk Policy",
+    "team": "Procurement",
+    "conflict_count": 0,
+    "redundant_count": 0,
+    "complementary_count": 1,
+    "staleness_score": 80,
+    "review_status": "critical",
+    "health_score": 68
+  },
+  {
+    "policy_id": "POL-012",
+    "title": "Incident Response Policy",
+    "team": "Security Operations",
+    "conflict_count": 0,
+    "redundant_count": 0,
+    "complementary_count": 7,
+    "staleness_score": 48,
+    "review_status": "stale",
+    "health_score": 81
+  },
+  {
+    "policy_id": "POL-005",
+    "title": "Data Retention Policy",
+    "team": "Legal",
+    "conflict_count": 0,
+    "redundant_count": 0,
+    "complementary_count": 1,
+    "staleness_score": 41,
+    "review_status": "stale",
+    "health_score": 84
+  },
+  {
+    "policy_id": "POL-010",
+    "title": "Cloud Storage Security Policy",
+    "team": "Cloud Engineering",
+    "conflict_count": 0,
+    "redundant_count": 0,
+    "complementary_count": 4,
+    "staleness_score": 28,
+    "review_status": "aging",
+    "health_score": 89
+  },
+  {
+    "policy_id": "POL-017",
+    "title": "Cloud Resilience & Backup Policy",
+    "team": "Cloud Engineering",
+    "conflict_count": 0,
+    "redundant_count": 0,
+    "complementary_count": 3,
+    "staleness_score": 28,
+    "review_status": "aging",
+    "health_score": 89
+  },
+  {
+    "policy_id": "POL-008",
+    "title": "Remote Access & CI/CD Exception Policy",
+    "team": "DevOps",
+    "conflict_count": 0,
+    "redundant_count": 0,
+    "complementary_count": 5,
+    "staleness_score": 24,
+    "review_status": "aging",
+    "health_score": 90
+  }
+]

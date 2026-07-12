@@ -1,0 +1,694 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {},
+  "nodes": [
+    {
+      "policy_id": "POL-001",
+      "policy_title": "Password Policy",
+      "section": "3.1",
+      "text": "All employees must rotate passwords every 90 days for all corporate accounts, including cloud-hosted systems.",
+      "topic": "password_rotation",
+      "scope": "all_employees",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-001-3.1-o1"
+    },
+    {
+      "policy_id": "POL-002",
+      "policy_title": "Cloud Security Policy",
+      "section": "5.1",
+      "text": "All cloud-hosted data stores must use AES-256 encryption at rest.",
+      "topic": "encryption_at_rest",
+      "scope": "cloud_data_stores",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-002-5.1-o1"
+    },
+    {
+      "policy_id": "POL-002",
+      "policy_title": "Cloud Security Policy",
+      "section": "5.2",
+      "text": "Cloud accounts shall not require periodic password rotation.",
+      "topic": "password_rotation",
+      "scope": "cloud_accounts",
+      "strength": "prohibited",
+      "polarity": "prohibit",
+      "id": "POL-002-5.2-o1"
+    },
+    {
+      "policy_id": "POL-002",
+      "policy_title": "Cloud Security Policy",
+      "section": "5.2",
+      "text": "Multi-factor authentication (MFA) must be enforced on all cloud accounts as the primary defense against credential compromise.",
+      "topic": "mfa",
+      "scope": "cloud_accounts",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-002-5.2-o2"
+    },
+    {
+      "policy_id": "POL-002",
+      "policy_title": "Cloud Security Policy",
+      "section": "5.2",
+      "text": "Forced password rotation is deprecated as a control in favor of MFA and will not be required for cloud-hosted systems.",
+      "topic": "password_rotation",
+      "scope": "cloud_data_stores",
+      "strength": "prohibited",
+      "polarity": "prohibit",
+      "id": "POL-002-5.2-o3"
+    },
+    {
+      "policy_id": "POL-002",
+      "policy_title": "Cloud Security Policy",
+      "section": "5.3",
+      "text": "CloudTrail (or equivalent audit logging) must be enabled at all times on every account and region.",
+      "topic": "logging_monitoring",
+      "scope": "cloud_accounts_and_regions",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-002-5.3-o1"
+    },
+    {
+      "policy_id": "POL-002",
+      "policy_title": "Cloud Security Policy",
+      "section": "5.3",
+      "text": "Logging must not be disabled outside of an approved, time-boxed exception under the Incident Response Policy.",
+      "topic": "logging_monitoring",
+      "scope": "cloud_accounts_and_regions",
+      "strength": "prohibited",
+      "polarity": "prohibit",
+      "id": "POL-002-5.3-o2"
+    },
+    {
+      "policy_id": "POL-002",
+      "policy_title": "Cloud Security Policy",
+      "section": "5.4",
+      "text": "Security groups and equivalent network controls must default to deny-all inbound, with exceptions requiring documented business justification and expiration date.",
+      "topic": "firewall_network",
+      "scope": "network_controls",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-002-5.4-o1"
+    },
+    {
+      "policy_id": "POL-003",
+      "policy_title": "Acceptable Use Policy",
+      "section": "3.2",
+      "text": "All web traffic should be encrypted using TLS 1.0 or higher when accessing corporate resources remotely",
+      "topic": "encryption_in_transit",
+      "scope": "all_employees",
+      "strength": "recommended",
+      "polarity": "require",
+      "id": "POL-003-3.2-o1"
+    },
+    {
+      "policy_id": "POL-003",
+      "policy_title": "Acceptable Use Policy",
+      "section": "3.4",
+      "text": "Employees must report suspected security incidents to the IT Helpdesk within 24 hours of discovery",
+      "topic": "incident_reporting",
+      "scope": "all_employees",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-003-3.4-o1"
+    },
+    {
+      "policy_id": "POL-004",
+      "policy_title": "Data Classification Policy",
+      "section": "3.1",
+      "text": "Data must be classified as Public, Internal, Confidential, or Restricted.",
+      "topic": "data_classification",
+      "scope": "all_data",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-004-3.1-o1"
+    },
+    {
+      "policy_id": "POL-004",
+      "policy_title": "Data Classification Policy",
+      "section": "3.2",
+      "text": "Confidential and Restricted data must be encrypted at rest using industry-standard encryption (minimum AES-256) and in transit using TLS 1.2 or higher.",
+      "topic": "encryption",
+      "scope": "confidential_restricted_data",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-004-3.2-o1"
+    },
+    {
+      "policy_id": "POL-005",
+      "policy_title": "Data Retention Policy",
+      "section": "3.2",
+      "text": "Security and access audit logs must be retained for a minimum of 3 years.",
+      "topic": "data_retention",
+      "scope": "audit_logs",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-005-3.2-o1"
+    },
+    {
+      "policy_id": "POL-006",
+      "policy_title": "Data Subject Rights & Privacy Policy",
+      "section": "4.2",
+      "text": "Personal data must not be retained longer than necessary for the purpose for which it was collected.",
+      "topic": "data_retention",
+      "scope": "eu_data_subjects",
+      "strength": "prohibited",
+      "polarity": "prohibit",
+      "id": "POL-006-4.2-o1"
+    },
+    {
+      "policy_id": "POL-007",
+      "policy_title": "Network Security Policy",
+      "section": "3.3",
+      "text": "All inbound firewall rules must be reviewed quarterly and documented with business justification.",
+      "topic": "firewall_rules",
+      "scope": "inbound_firewall_rules",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-007-3.3-o1"
+    },
+    {
+      "policy_id": "POL-008",
+      "policy_title": "Remote Access & CI/CD Exception Policy",
+      "section": "2.2",
+      "text": "All CI/CD pipeline traffic exempted under this policy must be logged and reviewed weekly by the Platform Security team.",
+      "topic": "logging_monitoring",
+      "scope": "cicd_pipelines",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-008-2.2-o1"
+    },
+    {
+      "policy_id": "POL-009",
+      "policy_title": "Encryption Standards Policy",
+      "section": "3.1",
+      "text": "All Confidential and Restricted data must be encrypted at rest using AES-256 or stronger.",
+      "topic": "encryption_at_rest",
+      "scope": "confidential_and_restricted_data",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-009-3.1-o1"
+    },
+    {
+      "policy_id": "POL-009",
+      "policy_title": "Encryption Standards Policy",
+      "section": "3.2",
+      "text": "All data in transit must use TLS 1.2 or higher.",
+      "topic": "tls_version",
+      "scope": "data_in_transit",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-009-3.2-o1"
+    },
+    {
+      "policy_id": "POL-010",
+      "policy_title": "Cloud Storage Security Policy",
+      "section": "4.1",
+      "text": "All cloud object and block storage containing Confidential or Restricted data must be encrypted at rest using AES-256 encryption.",
+      "topic": "encryption_at_rest",
+      "scope": "cloud_storage",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-010-4.1-o1"
+    },
+    {
+      "policy_id": "POL-011",
+      "policy_title": "Logging & Monitoring Policy",
+      "section": "3.1",
+      "text": "Audit logging (including CloudTrail or equivalent) must remain enabled at all times on all production systems.",
+      "topic": "logging_monitoring",
+      "scope": "production_systems",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-011-3.1-o1"
+    },
+    {
+      "policy_id": "POL-011",
+      "policy_title": "Logging & Monitoring Policy",
+      "section": "3.1",
+      "text": "Logging must not be manually disabled by an engineer for debugging or any other ad hoc purpose.",
+      "topic": "logging_monitoring",
+      "scope": "engineers",
+      "strength": "prohibited",
+      "polarity": "prohibit",
+      "id": "POL-011-3.1-o2"
+    },
+    {
+      "policy_id": "POL-011",
+      "policy_title": "Logging & Monitoring Policy",
+      "section": "3.2",
+      "text": "Log data must be retained for a minimum of 1 year in an immutable store.",
+      "topic": "data_retention",
+      "scope": "production_systems",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-011-3.2-o1"
+    },
+    {
+      "policy_id": "POL-012",
+      "policy_title": "Incident Response Policy",
+      "section": "5.1",
+      "text": "During an active, declared security incident, the Incident Commander may authorize temporary suspension of specific logging or monitoring controls for a maximum of 4 hours if required for forensic isolation, provided the exception is documented in the incident ticket and reviewed within 24 hours by the CISO.",
+      "topic": "logging_monitoring",
+      "scope": "incident_commander",
+      "strength": "recommended",
+      "polarity": "require",
+      "id": "POL-012-5.1-o1"
+    },
+    {
+      "policy_id": "POL-012",
+      "policy_title": "Incident Response Policy",
+      "section": "5.2",
+      "text": "All confirmed incidents affecting Confidential or Restricted data must be reported to Legal and the DPO within 24 hours of confirmation.",
+      "topic": "incident_reporting",
+      "scope": "all_confirmed_incidents",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-012-5.2-o1"
+    },
+    {
+      "policy_id": "POL-013",
+      "policy_title": "Identity & Access Management Policy",
+      "section": "3.1",
+      "text": "Multi-factor authentication (MFA) must be enforced for all privileged and administrative accounts on all systems, with no exceptions.",
+      "topic": "mfa",
+      "scope": "privileged_and_admin_accounts",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-013-3.1-o1"
+    },
+    {
+      "policy_id": "POL-014",
+      "policy_title": "Legacy Systems Support Policy",
+      "section": "3.1",
+      "text": "The legacy administrative console for on-prem systems may be accessed using a strong password alone; MFA is not required for these consoles due to compatibility limitations with the legacy authentication module.",
+      "topic": "mfa",
+      "scope": "legacy_admin_console",
+      "strength": "prohibited",
+      "polarity": "prohibit",
+      "id": "POL-014-3.1-o1"
+    },
+    {
+      "policy_id": "POL-015",
+      "policy_title": "Vendor & Third-Party Risk Policy",
+      "section": "3.3",
+      "text": "Vendor security posture must be reassessed annually for vendors with access to Confidential or Restricted data.",
+      "topic": "vendor_risk",
+      "scope": "vendors_with_confidential_or_restricted_data",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-015-3.3-o1"
+    },
+    {
+      "policy_id": "POL-016",
+      "policy_title": "Data Backup Policy",
+      "section": "3.1",
+      "text": "All production systems must maintain a daily on-premises backup in addition to any other backup mechanism, retained for a minimum of 30 days.",
+      "topic": "backup",
+      "scope": "all_production_systems",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-016-3.1-o1"
+    },
+    {
+      "policy_id": "POL-016",
+      "policy_title": "Data Backup Policy",
+      "section": "3.1",
+      "text": "All production systems must maintain a daily on-premises backup in addition to any other backup mechanism, retained for a minimum of 30 days.",
+      "topic": "data_retention",
+      "scope": "all_production_systems",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-016-3.1-o2"
+    },
+    {
+      "policy_id": "POL-016",
+      "policy_title": "Data Backup Policy",
+      "section": "3.3",
+      "text": "Backup media must be encrypted at rest.",
+      "topic": "encryption_at_rest",
+      "scope": "all_production_systems",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-016-3.3-o4"
+    },
+    {
+      "policy_id": "POL-017",
+      "policy_title": "Cloud Resilience & Backup Policy",
+      "section": "4.1",
+      "text": "Cloud-hosted systems using managed multi-region replication are exempt from the on-premises backup requirement defined in the Data Backup Policy, provided replication is verified quarterly and covers all Restricted-tier data.",
+      "topic": "backup",
+      "scope": "cloud_hosted_systems",
+      "strength": "mandatory",
+      "polarity": "prohibit",
+      "id": "POL-017-4.1-o1"
+    },
+    {
+      "policy_id": "POL-017",
+      "policy_title": "Cloud Resilience & Backup Policy",
+      "section": "4.2",
+      "text": "Cloud systems must meet a Recovery Point Objective (RPO) of 1 hour and Recovery Time Objective (RTO) of 4 hours.",
+      "topic": "backup",
+      "scope": "cloud_systems",
+      "strength": "mandatory",
+      "polarity": "require",
+      "id": "POL-017-4.2-o2"
+    }
+  ],
+  "edges": [
+    {
+      "relationship": "CONFLICT",
+      "confidence": 0.95,
+      "explanation": "POL-001 \u00a73.1 mandates 90\u2011day password rotation for all corporate accounts, including cloud\u2011hosted systems, whereas POL-002 \u00a75.2 deprecates forced rotation for cloud\u2011hosted systems, creating a direct contradiction.",
+      "color": "#B3261E",
+      "source": "POL-001-3.1-o1",
+      "target": "POL-002-5.2-o3"
+    },
+    {
+      "relationship": "CONFLICT",
+      "confidence": 0.98,
+      "explanation": "POL\u2011001 \u00a73.1 requires all employees to rotate passwords every 90\u202fdays for all corporate accounts, including cloud\u2011hosted systems, while POL\u2011002 \u00a75.2 prohibits periodic password rotation for cloud accounts. Both obligations target the same entities with opposing requirements, and no exception clause reconciles them.",
+      "color": "#B3261E",
+      "source": "POL-001-3.1-o1",
+      "target": "POL-002-5.2-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.93,
+      "explanation": "POL\u2011002 \u00a75.1 requires AES\u2011256 encryption at rest for all cloud\u2011hosted data stores; POL\u2011010 \u00a74.1 applies only to cloud object/block storage containing confidential or restricted data, also requiring AES\u2011256 at rest. The more specific rule supplements the broader one without conflict.",
+      "color": "#2F6F62",
+      "source": "POL-002-5.1-o1",
+      "target": "POL-010-4.1-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.85,
+      "explanation": "POL-002 \u00a75.1 requires AES\u2011256 encryption at rest for all cloud\u2011hosted data stores, whereas POL-009 \u00a73.1 requires AES\u2011256 encryption at rest for all Confidential and Restricted data regardless of location. The policies cover different scopes but reinforce encryption requirements.",
+      "color": "#2F6F62",
+      "source": "POL-002-5.1-o1",
+      "target": "POL-009-3.1-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.85,
+      "explanation": "POL-002 \u00a75.1 mandates AES\u2011256 encryption at rest for all cloud\u2011hosted data stores, whereas POL-004 \u00a73.2 requires encryption at rest (minimum AES\u2011256) for Confidential or Restricted data in any location, adding a TLS 1.2+ requirement for transit. The two obligations apply to overlapping data sets but one is broader; they support each other rather than conflict.",
+      "color": "#2F6F62",
+      "source": "POL-002-5.1-o1",
+      "target": "POL-004-3.2-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.92,
+      "explanation": "POL\u2011002 \u00a75.1 requires AES\u2011256 at rest for cloud data stores, while POL\u2011016 \u00a73.3 mandates encryption of backup media. They cover distinct objects (data stores vs backup media) and reinforce overall data\u2011at\u2011rest security.",
+      "color": "#2F6F62",
+      "source": "POL-002-5.1-o1",
+      "target": "POL-016-3.3-o4"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "Both obligations mandate MFA, but POL\u2011002 \u00a75.2 applies to all cloud accounts while POL\u2011013 \u00a73.1 covers privileged and admin accounts on all systems. The broader cloud\u2011wide requirement and the more specific privileged\u2011account requirement reinforce each other without conflict.",
+      "color": "#2F6F62",
+      "source": "POL-002-5.2-o2",
+      "target": "POL-013-3.1-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.92,
+      "explanation": "POL\u2011002 \u00a75.3 mandates that CloudTrail (or equivalent) is always enabled on every cloud account and region, while POL\u2011011 \u00a73.1 requires audit logging to remain enabled on all production systems. The scopes overlap but are not contradictory; each requirement reinforces the other.",
+      "color": "#2F6F62",
+      "source": "POL-002-5.3-o1",
+      "target": "POL-011-3.1-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "POL-002-5.3-o1 requires CloudTrail logging always enabled for all accounts, and POL-011-3.1-o2 prohibits engineers from manually disabling logging. The two mandates reinforce the same objective, making them complementary.",
+      "color": "#2F6F62",
+      "source": "POL-002-5.3-o1",
+      "target": "POL-011-3.1-o2"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-002 \u00a75.3 (A) requires CloudTrail to be enabled at all times, while POL-012 \u00a75.1 (B) permits a 4\u2011hour suspension during a declared incident when documented. The explicit incident\u2011based exception in (B) complements the mandatory rule in (A).",
+      "color": "#2F6F62",
+      "source": "POL-002-5.3-o1",
+      "target": "POL-012-5.1-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL\u2011002 \u00a75.3 mandates CloudTrail logging for all accounts/regions, while POL\u2011008 \u00a72.2 requires weekly logging and review of CI/CD pipeline traffic. Both requirements coexist without overlapping scope, thereby complementing each other.",
+      "color": "#2F6F62",
+      "source": "POL-002-5.3-o1",
+      "target": "POL-008-2.2-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.8,
+      "explanation": "POL-002 \u00a75.3 allows logging to be disabled only under an approved Incident Response exception, while POL-011 \u00a73.1 prohibits engineers from disabling logging for debugging or ad\u2011hoc purposes. The exception in POL-002 is a formal, non\u2011ad\u2011hoc process, thus the obligations coexist.",
+      "color": "#2F6F62",
+      "source": "POL-002-5.3-o2",
+      "target": "POL-011-3.1-o2"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-002-5.3-o2 prohibits disabling logging except under an approved, time\u2011boxed incident\u2011response exception; POL-012-5.1-o1 authorizes a temporary logging suspension during an incident, which satisfies the exception clause. The two obligations are therefore complementary.",
+      "color": "#2F6F62",
+      "source": "POL-002-5.3-o2",
+      "target": "POL-012-5.1-o1"
+    },
+    {
+      "relationship": "CONFLICT",
+      "confidence": 0.9,
+      "explanation": "POL-002 \u00a75.3 (A) permits disabling logging only with an approved Incident Response exception, whereas POL-011 \u00a73.1 (B) mandates logging on all production systems at all times with no exception. Because production systems fall under cloud accounts and regions, the two obligations conflict.",
+      "color": "#B3261E",
+      "source": "POL-002-5.3-o2",
+      "target": "POL-011-3.1-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-002 \u00a75.3 (A) prohibits disabling logging except under an IRP exception, while POL-008 \u00a72.2 (B) requires CI/CD traffic to be logged and reviewed weekly. The logging requirement in (B) is reinforced by (A), making the obligations complementary.",
+      "color": "#2F6F62",
+      "source": "POL-002-5.3-o2",
+      "target": "POL-008-2.2-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "POL-002 \u00a75.4 requires security groups to default deny inbound and allows exceptions only with documented justification and expiration. POL-007 \u00a73.3 requires quarterly review and business justification for all inbound firewall rules. The policies reinforce one another by providing documentation requirements, but they do not conflict.",
+      "color": "#2F6F62",
+      "source": "POL-002-5.4-o1",
+      "target": "POL-007-3.3-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "POL-003 \u00a73.2 recommends TLS\u202f1.0+ for all remote web traffic, whereas POL-004 \u00a73.2 requires TLS\u202f1.2+ for confidential data in transit. The stricter mandatory requirement supersedes the recommendation without contradiction.",
+      "color": "#2F6F62",
+      "source": "POL-003-3.2-o1",
+      "target": "POL-004-3.2-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.92,
+      "explanation": "POL\u2011003 \u00a73.2 recommends TLS\u00a01.0+ for web traffic to corporate resources remotely, while POL\u2011009 \u00a73.2 mandates TLS\u00a01.2+ for all data in transit. The recommendation is subsumed by the stronger mandatory requirement, so they coexist without conflict.",
+      "color": "#2F6F62",
+      "source": "POL-003-3.2-o1",
+      "target": "POL-009-3.2-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-003 \u00a73.4 mandates incident reporting to IT Helpdesk within 24\u202fhrs for all employees, while POL-012 \u00a75.2 adds a parallel reporting requirement to Legal and DPO for confirmed incidents involving Confidential or Restricted data. The second obligation extends the first for a specific data class and confirmation status, creating an exception rather than a contradiction.",
+      "color": "#2F6F62",
+      "source": "POL-003-3.4-o1",
+      "target": "POL-012-5.2-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-004 \u00a73.1 mandates classification of all data, while POL-009 \u00a73.1 applies encryption only to Confidential and Restricted data, thus the encryption rule is scoped to a subset and complements the classification requirement.",
+      "color": "#2F6F62",
+      "source": "POL-004-3.1-o1",
+      "target": "POL-009-3.1-o1"
+    },
+    {
+      "relationship": "REDUNDANT",
+      "confidence": 0.85,
+      "explanation": "Both policies address confidential/restricted data encryption at rest with AES\u2011256 or stronger. POL\u2011004 \u00a73.2 includes the same rest\u2011encryption requirement (plus transit), making POL\u2011009 \u00a73.1\u2019s rest requirement redundant.",
+      "color": "#B8923F",
+      "source": "POL-004-3.2-o1",
+      "target": "POL-009-3.1-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "POL\u2011004 \u00a73.2 requires AES\u2011256 at rest for all confidential/restricted data, whereas POL\u2011010 \u00a74.1 restricts the requirement to cloud object/block storage. The cloud\u2011specific rule complements the broader data\u2011classification rule without contradiction.",
+      "color": "#2F6F62",
+      "source": "POL-004-3.2-o1",
+      "target": "POL-010-4.1-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-004 \u00a73.2 mandates TLS\u202f1.2+ for confidential data in transit, while POL-009 \u00a73.2 requires TLS\u202f1.2+ for all in\u2011transit data. The broader requirement complements the specific one.",
+      "color": "#2F6F62",
+      "source": "POL-004-3.2-o1",
+      "target": "POL-009-3.2-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.93,
+      "explanation": "POL-005 \u00a73.2 requires audit logs to be retained for 3\u202fyears, and POL-011 \u00a73.2 requires all logs to be retained for at least 1\u202fyear. The stricter 3\u2011year rule applies to audit logs, complementing the general requirement.",
+      "color": "#2F6F62",
+      "source": "POL-005-3.2-o1",
+      "target": "POL-011-3.2-o1"
+    },
+    {
+      "relationship": "CONFLICT",
+      "confidence": 0.88,
+      "explanation": "POL-006 \u00a74.2 prohibits retaining personal data longer than necessary; POL-011 \u00a73.2 mandates a minimum 1\u2011year retention for logs, which may contain personal data for EU subjects, creating an irreconcilable conflict.",
+      "color": "#B3261E",
+      "source": "POL-006-4.2-o1",
+      "target": "POL-011-3.2-o1"
+    },
+    {
+      "relationship": "CONFLICT",
+      "confidence": 0.85,
+      "explanation": "POL-006-4.2-o1 prohibits retaining personal EU data longer than necessary, while POL-016-3.1-o2 requires daily backups of all production systems retained for 30 days. If backups contain EU personal data, they would be retained beyond the 'necessary' period, violating POL-006-4.2-o1; no explicit exception resolves this.",
+      "color": "#B3261E",
+      "source": "POL-006-4.2-o1",
+      "target": "POL-016-3.1-o2"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-008 \u00a72.2 (A) mandates weekly logging of CI/CD pipeline traffic, whereas POL-012 \u00a75.1 (B) allows temporary suspension of logging for up to 4 hours during an incident with documentation. The exception in (B) provides a controlled override, making the pair complementary.",
+      "color": "#2F6F62",
+      "source": "POL-008-2.2-o1",
+      "target": "POL-012-5.1-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.93,
+      "explanation": "POL\u2011008 \u00a72.2 requires CI/CD traffic to be logged and reviewed weekly; POL\u2011011 \u00a73.1 prohibits engineers from disabling logging. The prohibition reinforces the logging requirement, so the obligations are complementary.",
+      "color": "#2F6F62",
+      "source": "POL-008-2.2-o1",
+      "target": "POL-011-3.1-o2"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.92,
+      "explanation": "POL\u2011008 \u00a72.2 specifies logging and weekly review of CI/CD pipeline traffic, while POL\u2011011 \u00a73.1 requires audit logging to remain enabled at all times on production systems. The two obligations reinforce each other across overlapping scope without conflict.",
+      "color": "#2F6F62",
+      "source": "POL-008-2.2-o1",
+      "target": "POL-011-3.1-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "POL\u2011009 \u00a73.1 requires AES\u2011256 encryption at rest for all confidential/restricted data, whereas POL\u2011010 \u00a74.1 requires the same encryption for cloud object or block storage that holds such data. The latter is a narrower, environment\u2011specific subset that supports the broader policy.",
+      "color": "#2F6F62",
+      "source": "POL-009-3.1-o1",
+      "target": "POL-010-4.1-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "POL-009 \u00a73.1 requires AES\u2011256 encryption for Confidential and Restricted data at rest, while POL-016 \u00a73.3 requires encryption of all backup media at rest. The two obligations apply to different scopes (data vs. backup media) and reinforce overall encryption controls.",
+      "color": "#2F6F62",
+      "source": "POL-009-3.1-o1",
+      "target": "POL-016-3.3-o4"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.88,
+      "explanation": "POL\u2011009 \u00a73.1 mandates AES\u2011256 encryption at rest for Confidential/Restricted data, and POL\u2011015 \u00a73.3 requires annual vendor reassessment for vendors handling such data. Both obligations protect the same data set but in complementary ways.",
+      "color": "#2F6F62",
+      "source": "POL-009-3.1-o1",
+      "target": "POL-015-3.3-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.94,
+      "explanation": "POL-009 \u00a73.1 encrypts Confidential/Restricted data at rest, while POL-012 \u00a75.2 requires incident reporting for incidents involving such data; the policies address different aspects of the same data categories and therefore complement each other.",
+      "color": "#2F6F62",
+      "source": "POL-009-3.1-o1",
+      "target": "POL-012-5.2-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "POL-010 \u00a74.1 requires AES\u2011256 encryption at rest for cloud storage containing Confidential or Restricted data, and POL-016 \u00a73.3 requires encryption of all backup media at rest. The requirements apply to related but distinct scopes and reinforce encryption controls.",
+      "color": "#2F6F62",
+      "source": "POL-010-4.1-o1",
+      "target": "POL-016-3.3-o4"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-011 \u00a73.1 (A) mandates audit logging on all production systems at all times, while POL-012 \u00a75.1 (B) permits temporary suspension of logging during an incident with documentation. The incident\u2011based exception in (B) complements (A) rather than conflicting.",
+      "color": "#2F6F62",
+      "source": "POL-011-3.1-o1",
+      "target": "POL-012-5.1-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL-011 \u00a73.1 (A) forbids engineers from manually disabling logging for debugging, whereas POL-012 \u00a75.1 (B) allows the Incident Commander to suspend logging for up to 4 hours with proper documentation. The exception is scoped to the Incident Commander, so the two obligations are complementary.",
+      "color": "#2F6F62",
+      "source": "POL-011-3.1-o2",
+      "target": "POL-012-5.1-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "Both obligations are mandatory and concern data retention but apply to distinct data sets: POL-011-3.2-o1 mandates log data retention for 1 year, while POL-016-3.1-o2 requires daily backups of all production systems for 30 days. There is no contradiction; they coexist by design.",
+      "color": "#2F6F62",
+      "source": "POL-011-3.2-o1",
+      "target": "POL-016-3.1-o2"
+    },
+    {
+      "relationship": "CONFLICT",
+      "confidence": 0.98,
+      "explanation": "POL-013 \u00a73.1 mandates MFA for all privileged and administrative accounts on all systems with no exceptions, while POL-014 \u00a73.1 permits access to legacy administrative consoles without MFA. The two obligations directly contradict one another for the same type of accounts.",
+      "color": "#B3261E",
+      "source": "POL-013-3.1-o1",
+      "target": "POL-014-3.1-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.95,
+      "explanation": "POL\u2011016 \u00a73.1 imposes a daily on\u2011premises backup for all production systems, whereas POL\u2011017 \u00a74.1 exempts cloud\u2011hosted systems that use verified multi\u2011region replication covering Restricted data. The latter policy explicitly creates an exception to the former, making the relationship complementary.",
+      "color": "#2F6F62",
+      "source": "POL-016-3.1-o1",
+      "target": "POL-017-4.1-o1"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.9,
+      "explanation": "POL-016-3.1-o1 mandates daily backups retained 30 days for all production systems, while POL-017-4.2-o2 specifies RPO/RTO targets for cloud systems. Both requirements support data resilience but do not conflict; they complement each other.",
+      "color": "#2F6F62",
+      "source": "POL-016-3.1-o1",
+      "target": "POL-017-4.2-o2"
+    },
+    {
+      "relationship": "COMPLEMENTARY",
+      "confidence": 0.94,
+      "explanation": "POL-016 \u00a73.1 requires daily on\u2011prem backups for all production systems, but POL-017 \u00a74.1 exempts cloud\u2011hosted systems when quarterly replicated multi\u2011region data covers Restricted tier. The exception complements the blanket requirement.",
+      "color": "#2F6F62",
+      "source": "POL-016-3.1-o2",
+      "target": "POL-017-4.1-o1"
+    }
+  ],
+  "meta": {
+    "total_obligations": 60,
+    "obligations_in_graph": 32,
+    "total_edges": 41
+  }
+}

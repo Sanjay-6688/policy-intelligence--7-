@@ -1,0 +1,277 @@
+[
+  {
+    "policy_id": "POL-007",
+    "policy_title": "Network Security Policy",
+    "last_reviewed": "2021-09-01",
+    "months_since_review": 45.0,
+    "review_status": "critical",
+    "deprecated_references": [
+      {
+        "reference": "TLS 1.0",
+        "reason": "Deprecated by IETF RFC 8996 (2021); superseded by TLS 1.2+"
+      },
+      {
+        "reference": "SHA-1",
+        "reason": "Cryptographically broken since 2017 (SHAttered); superseded by SHA-256"
+      }
+    ],
+    "staleness_score": 100,
+    "summary": "Last reviewed 45 months ago (critical). References deprecated standard(s): TLS 1.0, SHA-1.",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-014",
+    "policy_title": "Legacy Systems Support Policy",
+    "last_reviewed": "2019-05-08",
+    "months_since_review": 72.8,
+    "review_status": "critical",
+    "deprecated_references": [
+      {
+        "reference": "SHA-1",
+        "reason": "Cryptographically broken since 2017 (SHAttered); superseded by SHA-256"
+      },
+      {
+        "reference": "Windows Server 2012",
+        "reason": "End of extended support (Oct 2023)"
+      }
+    ],
+    "staleness_score": 100,
+    "summary": "Last reviewed 73 months ago (critical). References deprecated standard(s): SHA-1, Windows Server 2012.",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-009",
+    "policy_title": "Encryption Standards Policy",
+    "last_reviewed": "2022-11-05",
+    "months_since_review": 30.9,
+    "review_status": "critical",
+    "deprecated_references": [
+      {
+        "reference": "TLS 1.0",
+        "reason": "Deprecated by IETF RFC 8996 (2021); superseded by TLS 1.2+"
+      },
+      {
+        "reference": "TLS 1.1",
+        "reason": "Deprecated by IETF RFC 8996 (2021); superseded by TLS 1.2+"
+      }
+    ],
+    "staleness_score": 92,
+    "summary": "Last reviewed 31 months ago (critical). References deprecated standard(s): TLS 1.0, TLS 1.1.",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-003",
+    "policy_title": "Acceptable Use Policy",
+    "last_reviewed": "2020-06-01",
+    "months_since_review": 60.0,
+    "review_status": "critical",
+    "deprecated_references": [
+      {
+        "reference": "TLS 1.0",
+        "reason": "Deprecated by IETF RFC 8996 (2021); superseded by TLS 1.2+"
+      }
+    ],
+    "staleness_score": 80,
+    "summary": "Last reviewed 60 months ago (critical). References deprecated standard(s): TLS 1.0.",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-015",
+    "policy_title": "Vendor & Third-Party Risk Policy",
+    "last_reviewed": "2020-11-11",
+    "months_since_review": 54.7,
+    "review_status": "critical",
+    "deprecated_references": [
+      {
+        "reference": "NIST SP 800-53 Rev 4",
+        "reason": "Superseded by NIST SP 800-53 Rev 5 (published Sept 2020)"
+      }
+    ],
+    "staleness_score": 80,
+    "summary": "Last reviewed 55 months ago (critical). References deprecated standard(s): NIST SP 800-53 Rev 4.",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-001",
+    "policy_title": "Password Policy",
+    "last_reviewed": "2021-03-15",
+    "months_since_review": 50.5,
+    "review_status": "critical",
+    "deprecated_references": [],
+    "staleness_score": 60,
+    "summary": "Last reviewed 50 months ago (critical).",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-004",
+    "policy_title": "Data Classification Policy",
+    "last_reviewed": "2022-02-20",
+    "months_since_review": 39.4,
+    "review_status": "stale",
+    "deprecated_references": [],
+    "staleness_score": 60,
+    "summary": "Last reviewed 39 months ago (stale).",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-011",
+    "policy_title": "Logging & Monitoring Policy",
+    "last_reviewed": "2021-04-22",
+    "months_since_review": 49.3,
+    "review_status": "critical",
+    "deprecated_references": [],
+    "staleness_score": 60,
+    "summary": "Last reviewed 49 months ago (critical).",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-016",
+    "policy_title": "Data Backup Policy",
+    "last_reviewed": "2021-09-01",
+    "months_since_review": 45.0,
+    "review_status": "stale",
+    "deprecated_references": [],
+    "staleness_score": 60,
+    "summary": "Last reviewed 45 months ago (stale).",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-013",
+    "policy_title": "Identity & Access Management Policy",
+    "last_reviewed": "2022-07-19",
+    "months_since_review": 34.4,
+    "review_status": "stale",
+    "deprecated_references": [],
+    "staleness_score": 57,
+    "summary": "Last reviewed 34 months ago (stale).",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-012",
+    "policy_title": "Incident Response Policy",
+    "last_reviewed": "2023-01-15",
+    "months_since_review": 28.5,
+    "review_status": "stale",
+    "deprecated_references": [],
+    "staleness_score": 48,
+    "summary": "Last reviewed 28 months ago (stale).",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-005",
+    "policy_title": "Data Retention Policy",
+    "last_reviewed": "2023-05-12",
+    "months_since_review": 24.6,
+    "review_status": "stale",
+    "deprecated_references": [],
+    "staleness_score": 41,
+    "summary": "Last reviewed 25 months ago (stale).",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-006",
+    "policy_title": "Data Subject Rights & Privacy Policy",
+    "last_reviewed": "2023-08-01",
+    "months_since_review": 22.0,
+    "review_status": "stale",
+    "deprecated_references": [],
+    "staleness_score": 37,
+    "summary": "Last reviewed 22 months ago (stale).",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-002",
+    "policy_title": "Cloud Security Policy",
+    "last_reviewed": "2024-01-10",
+    "months_since_review": 16.7,
+    "review_status": "aging",
+    "deprecated_references": [],
+    "staleness_score": 28,
+    "summary": "Last reviewed 17 months ago (aging).",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-010",
+    "policy_title": "Cloud Storage Security Policy",
+    "last_reviewed": "2024-01-10",
+    "months_since_review": 16.7,
+    "review_status": "aging",
+    "deprecated_references": [],
+    "staleness_score": 28,
+    "summary": "Last reviewed 17 months ago (aging).",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-017",
+    "policy_title": "Cloud Resilience & Backup Policy",
+    "last_reviewed": "2024-01-10",
+    "months_since_review": 16.7,
+    "review_status": "aging",
+    "deprecated_references": [],
+    "staleness_score": 28,
+    "summary": "Last reviewed 17 months ago (aging).",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  },
+  {
+    "policy_id": "POL-008",
+    "policy_title": "Remote Access & CI/CD Exception Policy",
+    "last_reviewed": "2024-03-18",
+    "months_since_review": 14.4,
+    "review_status": "aging",
+    "deprecated_references": [],
+    "staleness_score": 24,
+    "summary": "Last reviewed 14 months ago (aging).",
+    "controls": [
+      "ISO 27001 A.5.2 / Clause 5.2 (Review of Policies)",
+      "NIST SP 800-53 PL-1 (Policy and Procedures)"
+    ]
+  }
+]
